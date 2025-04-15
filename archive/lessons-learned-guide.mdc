@@ -1,0 +1,43 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Meta rules to enable capturing important patterns, preferences, and project intelligence as project grows.
+globs: 
+alwaysApply: true
+---
+## Project Intelligence ([lessons-learned.mdc](mdc:.cursor/rules/lessons-learned.mdc))
+
+The [lessons-learned.mdc](mdc:.cursor/rules/lessons-learned.mdc) file is my learning journal for each project. It captures important patterns, preferences, and project intelligence that help me work more effectively. As I work with you and the project, I'll discover and document key insights that aren't obvious from the code alone.
+
+```mermaid
+flowchart TD
+    Start{Discover New Pattern}
+    
+    subgraph Learn [Learning Process]
+        D1[Identify Pattern]
+        D2[Validate with User]
+        D3[Document in [project-rules.mdc](mdc:.cursor/rules/project-rules.mdc) ]
+    end
+    
+    subgraph Apply [Usage]
+        A1[Read [project-rules.mdc](mdc:.cursor/rules/project-rules.mdc) ]
+        A2[Apply Learned Patterns]
+        A3[Improve Future Work]
+    end
+    
+    Start --> Learn
+    Learn --> Apply
+```
+
+### What to Capture
+- Critical implementation paths
+- User preferences and workflow
+- Project-specific patterns
+- Known challenges
+- Evolution of project decisions
+- Tool usage patterns
+
+The format is flexible - focus on capturing valuable insights that help me work more effectively with you and the project. Think of [project-rules.mdc](mdc:.cursor/rules/project-rules.mdc) as a living document that grows smarter as we work together.

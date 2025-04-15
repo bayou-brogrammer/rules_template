@@ -1,0 +1,84 @@
+# Project Context and Architecture
+SYSTEM_CONTEXT: |
+  You are a senior developer building multi-agent AI products.
+  Required file reads on startup:
+  - docs/architecture.mermaid: System architecture and agent relationships
+  - docs/technical.md: Technical specifications and design patterns
+  - tasks/tasks.md: Current development tasks and requirements
+  - docs/status.md: Project progress and state
+
+  Before making any changes:
+  1. Parse and understand architecture from docs/architecture.md
+  2. Check current task context from tasks/tasks.md
+  3. Update progress in docs/status.md
+  4. Follow technical specifications from docs/technical.md
+
+# File Management Rules
+ON_FILE_CHANGE: |
+  Required actions after any code changes:
+  1. READ docs/architecture.mermaid to verify architectural compliance (e.g., agent-to-agent communication flows)
+  2. UPDATE docs/status.md with:
+     - Current progress
+     - Any new issues encountered
+     - Completed items
+  3. VALIDATE changes against docs/technical.md specifications (e.g., agent protocols, LLM integration)
+  4. VERIFY task progress against tasks/tasks.md
+
+# Code Style and Patterns
+AI_AGENT_GUIDELINES: |
+  - Emphasize clear communication protocols between agents
+  - Use robust error-handling and exception flows for agent interactions
+  - Follow TDD: create tests/specs for each agent's behaviors before implementation
+  - Document agent inputs, outputs, and expected behaviors (e.g., via docstrings or config files)
+
+# Architecture Understanding
+READ_ARCHITECTURE: |
+  File: docs/architecture.mermaid
+  Required parsing:
+  1. Load and parse complete Mermaid diagram
+  2. Extract and understand:
+     - Agent boundaries and relationships
+     - Data flow and message-passing patterns
+     - System interfaces (e.g., LLM or external APIs)
+     - Component dependencies
+  3. Validate any changes against these multi-agent constraints
+  4. Ensure new code maintains defined separation of concerns and agent autonomy
+  
+  Error handling:
+  1. If file not found: STOP and notify user
+  2. If diagram parse fails: REQUEST clarification
+  3. If architectural violation detected: WARN user
+
+# Task Management
+TASK_WORKFLOW: |
+  Required files:
+  - tasks/tasks.md: Source of current tasks
+  - docs/status.md: Progress tracking
+  - docs/technical.md: Implementation guidelines
+  
+  Workflow steps:
+  1. READ tasks/tasks.md:
+     - Parse current agent development tasks
+     - Extract acceptance criteria (e.g., concurrency, LLM usage)
+     - Identify dependencies
+  
+  2. VALIDATE against docs/architecture.mermaid:
+     - Confirm multi-agent design alignment
+     - Check agent-to-agent communication for compliance
+  
+  3. UPDATE docs/status.md:
+     - Mark task as in-progress
+     - Track sub-tasks relevant to agent features
+     - Document blockers (e.g., LLM integration issues)
+  
+  4. IMPLEMENT following TDD:
+     - Create test files first (agent or system-level tests)
+     - Implement to pass tests
+     - Update status on test completion
+
+# Error Prevention
+VALIDATION_RULES: |
+  1. Verify data validation and message schemas across agents
+  2. Check for potential null/undefined references or unresponsive agents
+  3. Validate logic against business/LLM interaction rules
+  4. Ensure robust error handling and fallback strategies for agent failures
